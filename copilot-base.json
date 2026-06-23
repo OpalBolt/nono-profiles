@@ -1,0 +1,19 @@
+{
+  "extends": "meta-base",
+  "meta": {
+    "name": "copilot-base",
+    "version": "1.0.0",
+    "description": "Base profile for GitHub Copilot CLI variants",
+    "author": "mads"
+  },
+  "filesystem": {
+    "allow": [
+      "~/.copilot",
+      "$XDG_CACHE_HOME/copilot"
+    ],
+    "read": [
+      "$XDG_CONFIG_HOME/github-copilot",
+      "$HOME/.config/github-copilot"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "extends": "copilot-base",
+  "meta": {
+    "name": "copilot-node",
+    "version": "1.0.0",
+    "description": "GitHub Copilot CLI with Node.js toolchain access",
+    "author": "mads"
+  },
+  "groups": {
+    "include": [
+      "node_runtime"
+    ]
+  }
+,
+  "workdir": {
+    "access": "readwrite"
+  }
+}

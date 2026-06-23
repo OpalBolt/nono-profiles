@@ -1,0 +1,78 @@
+{
+  "extends": [
+    "linux-host-compat"
+  ],
+  "meta": {
+    "name": "meta-base",
+    "version": "1.0.0",
+    "description": "Shared base for all agent profiles",
+    "author": "mads"
+  },
+  "groups": {
+    "include": [
+      "nix_runtime",
+      "git_config",
+      "unlink_protection"
+    ]
+  },
+  "filesystem": {
+    "allow": [
+      "/tmp",
+      "~/.local/share/rtk/"
+    ],
+    "read": [
+      "~/.config/gh",
+      "~/.cache/nix"
+    ]
+  },
+  "network": {
+    "block": false
+  },
+  "workdir": {
+    "access": "none"
+  },
+  "undo": {
+    "exclude_patterns": [
+      "node_modules",
+      ".next",
+      "__pycache__",
+      "target",
+      "dist",
+      "build",
+      ".venv",
+      "venv",
+      ".pytest_cache",
+      ".mypy_cache",
+      ".ruff_cache",
+      ".turbo",
+      "coverage",
+      ".direnv",
+      "result"
+    ],
+    "exclude_globs": [
+      "*.tmp.[0-9]*.[0-9]*",
+      "*.pyc",
+      "*.log",
+      "result-*"
+    ]
+  }
+,
+  "environment": {
+    "allow_vars": ["PATH", "HOME", "TERM", "USER", "GH_TOKEN", "GL_TOKEN", "CB_TOKEN", "SSH_AUTH_SOCK", "XDG_*"],
+    "set_vars": {
+      "GIT_CONFIG_COUNT": "6",
+      "GIT_CONFIG_KEY_0": "url.https://github.com/.insteadOf",
+      "GIT_CONFIG_VALUE_0": "git@github.com:",
+      "GIT_CONFIG_KEY_1": "credential.https://github.com.helper",
+      "GIT_CONFIG_VALUE_1": "!gh auth git-credential",
+      "GIT_CONFIG_KEY_2": "url.https://gitlab.com/.insteadOf",
+      "GIT_CONFIG_VALUE_2": "git@gitlab.com:",
+      "GIT_CONFIG_KEY_3": "credential.https://gitlab.com.helper",
+      "GIT_CONFIG_VALUE_3": "!printf \"username=%s\\npassword=%s\\n\" \"$GL_TOKEN\" \"$GL_TOKEN\"",
+      "GIT_CONFIG_KEY_4": "url.https://codeberg.org/.insteadOf",
+      "GIT_CONFIG_VALUE_4": "git@codeberg.org:",
+      "GIT_CONFIG_KEY_5": "credential.https://codeberg.org.helper",
+      "GIT_CONFIG_VALUE_5": "!printf \"username=%s\\npassword=%s\\n\" \"$CB_TOKEN\" \"$CB_TOKEN\""
+    }
+  }
+}

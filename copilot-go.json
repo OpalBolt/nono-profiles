@@ -1,0 +1,18 @@
+{
+  "extends": "copilot-base",
+  "meta": {
+    "name": "copilot-go",
+    "version": "1.0.0",
+    "description": "GitHub Copilot CLI with Go toolchain access",
+    "author": "mads"
+  },
+  "groups": {
+    "include": [
+      "go_runtime"
+    ]
+  }
+,
+  "workdir": {
+    "access": "readwrite"
+  }
+}

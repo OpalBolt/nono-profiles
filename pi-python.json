@@ -1,0 +1,18 @@
+{
+  "extends": "pi-base",
+  "meta": {
+    "name": "pi-python",
+    "version": "1.0.0",
+    "description": "pi coding agent with Python toolchain access",
+    "author": "mads"
+  },
+  "groups": {
+    "include": [
+      "python_runtime"
+    ]
+  }
+,
+  "workdir": {
+    "access": "readwrite"
+  }
+}

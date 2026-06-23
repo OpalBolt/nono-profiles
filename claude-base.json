@@ -1,0 +1,66 @@
+{
+  "extends": "meta-base",
+  "meta": {
+    "name": "claude-base",
+    "version": "1.0.0",
+    "description": "Base profile for Claude Code CLI variants",
+    "author": "mads"
+  },
+  "groups": {
+    "include": [
+      {
+        "name": "claude_code_macos",
+        "when": "macos"
+      },
+      {
+        "name": "claude_code_linux",
+        "when": "linux"
+      },
+      {
+        "name": "user_caches_macos",
+        "when": "macos"
+      },
+      {
+        "name": "claude_cache_linux",
+        "when": "linux"
+      },
+      "node_runtime",
+      "rust_runtime",
+      {
+        "name": "vscode_macos",
+        "when": "macos"
+      },
+      {
+        "name": "vscode_linux",
+        "when": "linux"
+      }
+    ]
+  },
+  "security": {
+    "signal_mode": "isolated",
+    "capability_elevation": false
+  },
+  "filesystem": {
+    "allow": [
+      "$HOME/.claude",
+      "$HOME/.local/state/claude/locks",
+      "$HOME/.cache/claude",
+      "/tmp/claude-$UID",
+      {
+        "path": "$HOME/Library/Keychains",
+        "when": "macos"
+      }
+    ]
+  },
+  "open_urls": {
+    "allow_origins": [
+      "https://claude.ai",
+      "https://claude.com",
+      "https://api.anthropic.com",
+      "https://platform.claude.com"
+    ],
+    "allow_localhost": true
+  },
+  "allow_launch_services": true,
+  "interactive": true
+}

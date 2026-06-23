@@ -1,0 +1,18 @@
+{
+  "extends": "pi-base",
+  "meta": {
+    "name": "pi-go",
+    "version": "1.0.0",
+    "description": "pi coding agent with Go toolchain access",
+    "author": "mads"
+  },
+  "groups": {
+    "include": [
+      "go_runtime"
+    ]
+  }
+,
+  "workdir": {
+    "access": "readwrite"
+  }
+}

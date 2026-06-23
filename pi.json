@@ -1,0 +1,9 @@
+{
+  "extends": "pi-base",
+  "meta": {
+    "name": "pi",
+    "version": "1.0.0",
+    "description": "Profile for the pi AI coding assistant",
+    "author": "mads"
+  }
+}

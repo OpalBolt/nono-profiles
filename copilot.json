@@ -1,0 +1,14 @@
+{
+  "extends": "copilot-base",
+  "meta": {
+    "name": "copilot",
+    "version": "1.0.0",
+    "description": "GitHub Copilot CLI coding agent",
+    "author": "mads"
+  },
+  "groups": {
+    "include": [
+      "node_runtime"
+    ]
+  }
+}

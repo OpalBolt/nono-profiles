@@ -1,0 +1,16 @@
+{
+  "extends": "meta-base",
+  "meta": {
+    "name": "pi-base",
+    "version": "1.0.0",
+    "description": "Base profile for pi AI coding assistant variants",
+    "author": "mads"
+  },
+  "filesystem": {
+    "allow": [
+      "$XDG_STATE_HOME/.pi",
+      "$XDG_CACHE_HOME/.pi",
+      "~/.pi"
+    ]
+  }
+}

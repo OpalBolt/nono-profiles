@@ -1,0 +1,26 @@
+{
+  "extends": "pi-base",
+  "meta": {
+    "name": "pi-node",
+    "version": "1.0.0",
+    "description": "pi coding agent with Node.js toolchain access",
+    "author": "mads"
+  },
+  "groups": {
+    "include": [
+      "node_runtime"
+    ]
+  },
+  "filesystem": {
+    "allow": [
+      "~/.npm/_cacache"
+    ],
+    "read": [
+      "$HOME/.nvm/"
+    ]
+  }
+,
+  "workdir": {
+    "access": "readwrite"
+  }
+}

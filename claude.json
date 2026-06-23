@@ -1,0 +1,9 @@
+{
+  "extends": "claude-base",
+  "meta": {
+    "name": "claude",
+    "version": "1.0.0",
+    "description": "Anthropic Claude Code CLI agent",
+    "author": "mads"
+  }
+}
